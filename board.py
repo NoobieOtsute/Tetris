@@ -33,3 +33,8 @@ class Board:
             for j in range(len(board[i])):
                 if board[i][j] == 1:
                     pg.draw.rect(self.game.screen, (120,120,120), (j*24,i*24, 24, 24))
+                    pg.draw.line(self.game.screen, (143,143,143), (j*24+1,i*24+1), (j*24+23,i*24+1))
+                    pg.draw.line(self.game.screen, (143,143,143), (j*24+1,i*24+1), (j*24+1,i*24+23))
+                    pg.draw.line(self.game.screen, (0,0,0), (j*24+23,i*24+23), (j*24+1,i*24+23))
+                    pg.draw.line(self.game.screen, (0,0,0), (j*24+23,i*24+23), (j*24+23,i*24+1))
+                    
