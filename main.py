@@ -13,8 +13,19 @@ class Game:
 
     def newgame(self):
         self.board = Board(self)
-        self.Title = Label("TETRIS", self)
-        self.Author = Label("BY OTSUTE", self)
+        self.Title = Label("TETRIS", self, 20)
+        self.Author = Label("BY OTSUTE", self, 20)
+        self.message1 = Label("Press any key to start playing", self, 15)
+        self.draw()
+        self.Title.draw(144-self.Title.getSize()[0]/2, 50)
+        self.Author.draw(144-self.Author.getSize()[0]/2, 75)
+        self.message1.draw(144-self.message1.getSize()[0]/2, 100)
+        self.update()
+        waiting = True
+        while waiting:
+            for event in pg.event.get():
+                if event.type == pg.KEYUP:
+                    waiting = False
 
     def update(self):
         pg.display.flip()
@@ -22,8 +33,7 @@ class Game:
     def draw(self):
         self.screen.fill("black")
         self.board.draw()
-        self.Title.draw(144-self.Title.getSize()[0]/2, 50)
-        self.Author.draw(144-self.Author.getSize()[0]/2, 75)
+        
 
     def checkEvents(self):
         for event in pg.event.get():
@@ -38,4 +48,4 @@ class Game:
 
 if __name__ == '__main__':
     game = Game()
-    game.run()    
+    game.run()   

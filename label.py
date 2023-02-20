@@ -2,9 +2,9 @@ import pygame as pg
 from settings import *
 
 class Label:
-    def __init__(self, text, game):
+    def __init__(self, text, game, fontSize):
         self.text = text
-        self.font = pg.font.SysFont('times new roman', 20)
+        self.font = pg.font.SysFont('times new roman', fontSize)
         self.game = game
 
     def draw(self, x, y):
