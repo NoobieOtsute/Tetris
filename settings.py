@@ -1,0 +1,1 @@
+RES = WIDTH, HEIGHT = 288, 528
